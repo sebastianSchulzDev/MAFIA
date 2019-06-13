@@ -12,12 +12,18 @@ namespace MAFIA.Classes.Menus
         {
             Console.WriteLine("MENU");
             Console.WriteLine("------");
-            Console.WriteLine("1.Roboty");
-            Console.WriteLine("2.Gang");
-            Console.WriteLine("3.Ekwipunek");
-            Console.WriteLine("4.Infrastruktura");
-            Console.WriteLine("5.Korupcja (kontakty z Policją)");
-            Console.WriteLine("6.Poziom ścigania");
+            Console.WriteLine($"Pozostało akcji do wykonania: {Game.GetRemainingActivitesCount()}");
+            Console.WriteLine("------");
+            if (!Game.CanExecuteAction())
+            {
+                Console.WriteLine("1.Roboty");
+                Console.WriteLine("2.Gang");
+                Console.WriteLine("3.Ekwipunek");
+                Console.WriteLine("4.Infrastruktura");
+                Console.WriteLine("5.Korupcja (kontakty z Policją)");
+                Console.WriteLine("6.Poziom ścigania");
+            }
+
             Console.WriteLine("7.Zakończ dzień");
 
             Console.WriteLine("99.Zakończ grę.");

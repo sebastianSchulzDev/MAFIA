@@ -15,7 +15,7 @@ namespace MAFIA.Classes
 
         public void AddActivityLog(ActivityLog log) => DailyActivities.Add(log);
         public int GetRemainingActivitesCount() => ActivityLimitPerDay - DailyActivities.Count;
-        public bool CanExecuteAction() => GetRemainingActivitesCount() < ActivityLimitPerDay;
+        public bool CanExecuteAction() => GetRemainingActivitesCount() > 0;
         public bool EndDay() => throw new NotImplementedException();
 
         public Gang Gang { get; private set; }
