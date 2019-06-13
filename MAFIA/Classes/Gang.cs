@@ -9,7 +9,7 @@ namespace MAFIA.Classes
         {
             Members = new List<GangMember>
             {
-                new GangMember("John Doe", 10,10)
+                new GangMember("John Doe", 30,10)
             };
             Money = 10;
         }

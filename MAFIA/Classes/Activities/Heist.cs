@@ -1,5 +1,6 @@
 
 using System;
+using MAFIA.Classes.Enums;
 using MAFIA.Classes.Helpers;
 using MAFIA.Classes.Interfaces;
 
@@ -19,20 +20,18 @@ namespace MAFIA.Classes.Activities
             Console.WriteLine(Name);
             Console.WriteLine("Trwa wykonanie");
             var income = RandomGenerator.GetForRange(100, 3500);
+            game.Gang.AddMoney(income);
 
-            if (game.Gang.GetGangStrength() <= 20)
+            var increaseWantedLevelPosibility = RandomGenerator.GetForRange(0, 50);
+
+            if (game.Gang.GetGangStrength() < increaseWantedLevelPosibility)
             {
-                Console.WriteLine($"Si³a gangu jest za ma³a, tracicie {income}$ !");
-                game.Gang.AddMoney(income * (-1));
-                return new ActivityLog(income *(-1));
+                Console.WriteLine($"Si³a gangu jest za ma³a, zdobywacie {income}$ ale wzrós³ poziom poszukiwañ !");
+                game.Police.IncreaseWantedLevel();
+                return new ActivityLog(income, WantedLevelChange.Increase);
             }
-            else
-            {
-                Console.WriteLine($"Zdoby³eœ {income}$ !");
-                game.Gang.AddMoney(income);
-                return new ActivityLog(income);
-            }
-               
+            Console.WriteLine($"Zdobywacie {income}$!");
+            return new ActivityLog(income);
         }
     }
 }
