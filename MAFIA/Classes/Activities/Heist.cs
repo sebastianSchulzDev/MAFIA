@@ -19,7 +19,7 @@ namespace MAFIA.Classes.Activities
             Console.Clear();
             Console.WriteLine(Name);
             Console.WriteLine("Trwa wykonanie");
-            var income = RandomGenerator.GetForRange(100, 3500);
+            var income = RandomGenerator.GetForRange(100, 200);
             game.Gang.AddMoney(income);
 
             var increaseWantedLevelPosibility = RandomGenerator.GetForRange(0, 50);

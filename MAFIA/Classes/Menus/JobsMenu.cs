@@ -25,14 +25,21 @@ namespace MAFIA.Classes.Menus
             var gangStrength = Game.Gang.GetGangStrength();
             foreach (var job in Jobs)
             {
-                if(job.Value is IRequiresStrength)
-                {
-                    var strengthJob = job.Value as IRequiresStrength;
-                    if (strengthJob.RequiredStrength > gangStrength)
-                        continue;
-                }
+                if (!HasRequiredStrength(gangStrength, job.Value))
+                    continue;
                 Console.WriteLine($"{job.Key}. {job.Value.Name}");
             }
+        }
+
+        private bool HasRequiredStrength(int gangStrength, Activity job)
+        {
+            if (job is IRequiresStrength)
+            {
+                var strengthJob = job as IRequiresStrength;
+                if (strengthJob.RequiredStrength > gangStrength)
+                    return false; 
+            }
+            return true;
         }
 
         public override Menu DoAction(int action)
