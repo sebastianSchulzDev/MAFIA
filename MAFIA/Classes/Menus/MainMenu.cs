@@ -18,7 +18,9 @@ namespace MAFIA.Classes.Menus
             Console.WriteLine("4.Infrastruktura");
             Console.WriteLine("5.Korupcja (kontakty z Policją)");
             Console.WriteLine("6.Poziom ścigania");
-            Console.WriteLine("7.Zakończ grę.");
+            Console.WriteLine("7.Zakończ dzień");
+
+            Console.WriteLine("99.Zakończ grę.");
         }
 
         public override Menu DoAction(int action)

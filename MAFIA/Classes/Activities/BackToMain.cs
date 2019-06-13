@@ -8,9 +8,10 @@ namespace MAFIA.Classes.Activities
         {
         }
 
-        public override void Execute(Game game)
+        protected override ActivityLog ExecuteActivity(Game game)
         {
             Console.WriteLine("Powrót do głownego menu");
+            return new ActivityLog();
         }
     }
 }

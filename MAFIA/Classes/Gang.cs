@@ -6,7 +6,10 @@ namespace MAFIA.Classes
     {
         public Gang()
         {
-            Members = new List<GangMember>();
+            Members = new List<GangMember>
+            {
+                new GangMember("John Doe")
+            };
             Money = 0;
         }
 

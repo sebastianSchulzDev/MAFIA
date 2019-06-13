@@ -1,4 +1,5 @@
 using System;
+using MAFIA.Classes.Interfaces;
 
 namespace MAFIA.Classes.Activities
 {
@@ -9,6 +10,13 @@ namespace MAFIA.Classes.Activities
         {
             Name = name;
         }
-        public abstract void Execute(Game game);
+        protected abstract ActivityLog ExecuteActivity(Game game);
+
+        public virtual void Execute(Game game)
+        {
+            var log = ExecuteActivity(game);
+            if (this is ILoggable)
+                game.AddActivityLog(log);
+        }
     }
 }
