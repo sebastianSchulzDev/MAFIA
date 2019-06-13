@@ -1,4 +1,4 @@
-﻿namespace MAFIA.Classes.Enums
+﻿namespace MAFIA.Enums
 {
     public enum WantedLevelChange
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace MAFIA.Classes.Helpers
+namespace MAFIA.Helpers
 {
     public class RandomGenerator
     {

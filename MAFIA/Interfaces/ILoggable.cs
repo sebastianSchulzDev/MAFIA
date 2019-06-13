@@ -1,4 +1,4 @@
-namespace MAFIA.Classes.Interfaces
+namespace MAFIA.Interfaces
 {
     public interface ILoggable
     {

@@ -1,6 +1,7 @@
+using MAFIA.Classes;
 using System;
 
-namespace MAFIA.Classes.Menus
+namespace MAFIA.Menus
 {
     public class MainMenu : Menu
     {

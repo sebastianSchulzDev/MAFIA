@@ -1,4 +1,6 @@
-namespace MAFIA.Classes.Menus
+using MAFIA.Classes;
+
+namespace MAFIA.Menus
 {
     public abstract class Menu
     {

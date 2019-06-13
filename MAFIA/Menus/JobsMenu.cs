@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
-using MAFIA.Classes.Activities;
-using MAFIA.Classes.Interfaces;
+using MAFIA.Activities;
+using MAFIA.Classes;
+using MAFIA.Interfaces;
 
-namespace MAFIA.Classes.Menus
+namespace MAFIA.Menus
 {
     public class JobsMenu : Menu
     {

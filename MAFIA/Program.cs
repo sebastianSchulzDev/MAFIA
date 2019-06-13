@@ -1,6 +1,6 @@
 ﻿using System;
 using MAFIA.Classes;
-using MAFIA.Classes.Menus;
+using MAFIA.Menus;
 
 namespace MAFIA
 {

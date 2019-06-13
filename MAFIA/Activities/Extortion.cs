@@ -1,8 +1,9 @@
 using System;
-using MAFIA.Classes.Helpers;
-using MAFIA.Classes.Interfaces;
+using MAFIA.Classes;
+using MAFIA.Helpers;
+using MAFIA.Interfaces;
 
-namespace MAFIA.Classes.Activities
+namespace MAFIA.Activities
 {
     public class Extortion : Activity, ILoggable
     {

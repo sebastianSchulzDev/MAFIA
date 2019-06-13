@@ -1,6 +1,7 @@
+using MAFIA.Classes;
 using System;
 
-namespace MAFIA.Classes.Activities
+namespace MAFIA.Activities
 {
     public class BackToMain : Activity
     {

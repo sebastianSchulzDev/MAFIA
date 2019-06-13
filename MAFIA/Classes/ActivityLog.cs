@@ -1,5 +1,5 @@
 using System;
-using MAFIA.Classes.Enums;
+using MAFIA.Enums;
 
 namespace MAFIA.Classes
 {

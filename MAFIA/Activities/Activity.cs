@@ -1,7 +1,8 @@
 using System;
-using MAFIA.Classes.Interfaces;
+using MAFIA.Classes;
+using MAFIA.Interfaces;
 
-namespace MAFIA.Classes.Activities
+namespace MAFIA.Activities
 {
     public abstract class Activity
     {
