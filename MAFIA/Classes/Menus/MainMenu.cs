@@ -14,7 +14,7 @@ namespace MAFIA.Classes.Menus
             Console.WriteLine("------");
             Console.WriteLine($"Pozostało akcji do wykonania: {Game.GetRemainingActivitesCount()}");
             Console.WriteLine("------");
-            if (!Game.CanExecuteAction())
+            if (Game.CanExecuteAction())
             {
                 Console.WriteLine("1.Roboty");
                 Console.WriteLine("2.Gang");

@@ -12,7 +12,7 @@ namespace MAFIA.Classes.Menus
             Jobs = new Dictionary<int, Activity>
             {
                 { 1, new Extortion("Haracz") },
-                { 2, new Extortion("Haracz2") },
+                { 2, new Heist("Napad") },
                 { 7, new BackToMain("Powrót do menu głównego") },
             };
         }

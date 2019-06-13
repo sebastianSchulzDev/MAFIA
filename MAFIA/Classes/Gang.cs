@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MAFIA.Classes
 {
@@ -8,9 +9,9 @@ namespace MAFIA.Classes
         {
             Members = new List<GangMember>
             {
-                new GangMember("John Doe")
+                new GangMember("John Doe", 10,10)
             };
-            Money = 0;
+            Money = 10;
         }
 
         public void AddMoney(int amount)
@@ -18,7 +19,14 @@ namespace MAFIA.Classes
             Money += amount;
         }
 
+        public int GetGangStrength()
+        {
+            return Members.Sum(member => member.Strength);
+        }
+
         public List<GangMember> Members { get; private set; }
         public int Money { get; private set; }
+
+
     }
 }
