@@ -13,6 +13,7 @@ namespace MAFIA.Classes.Menus
             {
                 { 1, new Extortion("Haracz") },
                 { 2, new Extortion("Haracz2") },
+                { 7, new BackToMain("Powrót do menu głównego") },
             };
         }
 
@@ -26,9 +27,19 @@ namespace MAFIA.Classes.Menus
             }
         }
 
-        public override void DoAction(int action)
+        public override Menu DoAction(int action)
         {
-            throw new NotImplementedException();
+            Activity selected;
+            if (Jobs.TryGetValue(action, out selected))
+            {
+                selected.Execute(Game);
+                return new MainMenu(Game);
+            }
+            else
+            {
+                Console.WriteLine("Nieprawidłowa akcja");
+                return this;
+            }
         }
     }
 }

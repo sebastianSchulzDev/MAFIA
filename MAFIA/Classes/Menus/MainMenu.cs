@@ -21,9 +21,16 @@ namespace MAFIA.Classes.Menus
             Console.WriteLine("7.Zakończ grę.");
         }
 
-        public override void DoAction(int action)
+        public override Menu DoAction(int action)
         {
-            throw new NotImplementedException();
+            switch (action)
+            {
+                case 1:
+                    return new JobsMenu(Game);
+                default:
+                    Console.WriteLine("Nieprawidłowa akcja");
+                    return this;
+            }
         }
     }
 }
