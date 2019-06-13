@@ -5,11 +5,13 @@ using MAFIA.Classes.Interfaces;
 
 namespace MAFIA.Classes.Activities
 {
-    public class Heist : Activity, ILoggable
+    public class Heist : Activity, ILoggable, IRequiresStrength
     {
         public Heist(string name) : base(name)
         {
         }
+
+        public int RequiredStrength => 21;
 
         protected override ActivityLog ExecuteActivity(Game game)
         {

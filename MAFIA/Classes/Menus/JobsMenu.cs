@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using MAFIA.Classes.Activities;
+using MAFIA.Classes.Interfaces;
 
 namespace MAFIA.Classes.Menus
 {
@@ -21,8 +22,15 @@ namespace MAFIA.Classes.Menus
         {
             Console.WriteLine("Roboty");
             Console.WriteLine("------");
+            var gangStrength = Game.Gang.GetGangStrength();
             foreach (var job in Jobs)
             {
+                if(job.Value is IRequiresStrength)
+                {
+                    var strengthJob = job.Value as IRequiresStrength;
+                    if (strengthJob.RequiredStrength > gangStrength)
+                        continue;
+                }
                 Console.WriteLine($"{job.Key}. {job.Value.Name}");
             }
         }
