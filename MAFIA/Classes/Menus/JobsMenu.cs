@@ -25,5 +25,10 @@ namespace MAFIA.Classes.Menus
                 Console.WriteLine($"{job.Key}. {job.Value.Name}");
             }
         }
+
+        public override void DoAction(int action)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
