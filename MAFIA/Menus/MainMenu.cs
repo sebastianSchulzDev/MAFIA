@@ -36,7 +36,8 @@ namespace MAFIA.Menus
             {
                 case 1:
                     return new JobsMenu(Game);
-                
+                case 3:
+                    return new WeaponsMenu(Game);
                 default:
                     Console.WriteLine("Nieprawidłowa akcja");
                     return this;

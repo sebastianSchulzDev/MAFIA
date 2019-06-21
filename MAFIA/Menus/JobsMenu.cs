@@ -17,7 +17,7 @@ namespace MAFIA.Menus
                 { 2, new Heist("Napad") },
                 { 3, new Robbery("Rozbój") },
                 { 4, new Trade("Handel") },
-                {5, new Auction("Przetarg") },
+                { 5, new Auction("Przetarg") },
                 { 7, new BackToMain("Powrót do menu głównego") },
             };
         }
@@ -41,15 +41,14 @@ namespace MAFIA.Menus
             {
                 var strengthJob = job as IRequiresStrength;
                 if (strengthJob.RequiredStrength > gangStrength)
-                    return false; 
+                    return false;
             }
             return true;
         }
 
         public override Menu DoAction(int action)
         {
-            Activity selected;
-            if (Jobs.TryGetValue(action, out selected))
+            if (Jobs.TryGetValue(action, out Activity selected))
             {
                 selected.Execute(Game);
                 return new MainMenu(Game);

@@ -11,6 +11,7 @@ namespace MAFIA.Classes
             {
                 new GangMember("John Doe", 30,10)
             };
+            Equipment = new List<Equipment>();
             Money = 10;
         }
 
@@ -19,12 +20,23 @@ namespace MAFIA.Classes
             Money += amount;
         }
 
+        public void SpendMoney(int amount)
+        {
+            Money -= amount;
+        }
+
+        public void AddWeapon(Equipment weapon)
+        {
+            Equipment.Add(weapon);
+        }
+
         public int GetGangStrength()
         {
             return Members.Sum(member => member.Strength);
         }
 
         public List<GangMember> Members { get; private set; }
+        public List<Equipment> Equipment { get; private set; }
         public int Money { get; private set; }
 
 
