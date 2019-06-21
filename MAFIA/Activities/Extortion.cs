@@ -5,7 +5,7 @@ using MAFIA.Interfaces;
 
 namespace MAFIA.Activities
 {
-    public class Extortion : Activity, ILoggable
+    public class Extortion : Activity, ILoggable, ICanAddMember
     {
         public Extortion(string name) : base(name)
         {

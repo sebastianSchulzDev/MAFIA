@@ -7,7 +7,7 @@ using MAFIA.Interfaces;
 
 namespace MAFIA.Activities
 {
-    public class Vat : Activity, ILoggable, IRequiresStrength
+    public class Vat : Activity, ILoggable, IRequiresStrength, ICanAddMember
     {
         public Vat(string name) : base(name)
         {

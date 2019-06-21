@@ -7,7 +7,7 @@ using MAFIA.Interfaces;
 
 namespace MAFIA.Activities
 {
-    public class Heist : Activity, ILoggable, IRequiresStrength
+    public class Heist : Activity, ILoggable, IRequiresStrength, ICanAddMember
     {
         public Heist(string name) : base(name)
         {

@@ -9,7 +9,7 @@ namespace MAFIA.Classes
         {
             Members = new List<GangMember>
             {
-                new GangMember("John Doe", 30,10)
+                new GangMember("John Doe", 30, 10)
             };
             Equipment = new List<Equipment>();
             Money = 10;
@@ -30,6 +30,12 @@ namespace MAFIA.Classes
             Equipment.Add(weapon);
         }
 
+        public void AddMember(GangMember member)
+        {
+            Members.Add(member);
+            AddMoney(member.Money);
+        }
+
         public int GetGangStrength()
         {
             return Members.Sum(member => member.Strength) + Equipment.Sum(eq => eq.Strength);
@@ -38,7 +44,5 @@ namespace MAFIA.Classes
         public List<GangMember> Members { get; private set; }
         public List<Equipment> Equipment { get; private set; }
         public int Money { get; private set; }
-
-
     }
 }
