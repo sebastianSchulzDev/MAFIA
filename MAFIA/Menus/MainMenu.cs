@@ -11,6 +11,7 @@ namespace MAFIA.Menus
 
         public override void Display()
         {
+            Console.WriteLine("------");
             Console.WriteLine("MENU");
             Console.WriteLine("------");
             Console.WriteLine($"Pozostało akcji do wykonania: {Game.GetRemainingActivitesCount()}");
@@ -22,7 +23,6 @@ namespace MAFIA.Menus
                 Console.WriteLine("3.Ekwipunek");
                 Console.WriteLine("4.Infrastruktura");
                 Console.WriteLine("5.Korupcja (kontakty z Policją)");
-                Console.WriteLine("6.Poziom ścigania");
             }
 
             Console.WriteLine("7.Zakończ dzień");
@@ -40,6 +40,8 @@ namespace MAFIA.Menus
                     return new GangMenu(Game);
                 case 3:
                     return new WeaponsMenu(Game);
+                case 5:
+                    return new PoliceMenu(Game);
                 default:
                     Console.WriteLine("Nieprawidłowa akcja");
                     return this;

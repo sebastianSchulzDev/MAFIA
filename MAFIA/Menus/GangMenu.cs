@@ -7,11 +7,11 @@ namespace MAFIA.Menus
     {
         public GangMenu(Game game) : base(game)
         {
+            Console.Clear();
         }
 
         public override void Display()
         {
-            Console.Clear();
             Console.WriteLine("Gang");
             Console.WriteLine("------");
             Console.WriteLine($"Siła gangu: {Game.Gang.GetGangStrength()}");

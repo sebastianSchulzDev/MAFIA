@@ -11,6 +11,7 @@ namespace MAFIA.Menus
         public Dictionary<int, Activity> Jobs { get; private set; }
         public JobsMenu(Game game) : base(game)
         {
+            Console.Clear();
             Jobs = new Dictionary<int, Activity>
             {
                 { 1, new Extortion("Haracz") },

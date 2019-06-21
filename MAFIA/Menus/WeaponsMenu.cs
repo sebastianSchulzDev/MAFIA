@@ -11,11 +11,12 @@ namespace MAFIA.Menus
 
         public WeaponsMenu(Game game) : base(game)
         {
+            Console.Clear();
             Weapons = new Dictionary<int, Activity>
             {
                 { 1, new BuyWeapon(new Equipment("Nóż", 5, 10)) },
                 { 2, new BuyWeapon(new Equipment("Pistolet", 15, 30)) },
-                { 7, new BackToMain("Powrót do menu głównego") },
+                { 3, new BackToMain("Powrót do menu głównego") },
             };
         }
 
@@ -34,7 +35,7 @@ namespace MAFIA.Menus
         {
             if (Weapons.TryGetValue(action, out Activity selected))
             {
-                if (selected is BuyWeapon buyAction && Game.Gang.Money < buyAction.Weapon.Cost)
+                if (selected is BuyWeapon butActivity && Game.Gang.Money < butActivity.Weapon.Cost) // (selected is BuyWeapon buyAction) - przyklad pattern matchingu
                 {
                     Console.WriteLine("Brak środków do zakupu broni");
                     return this;
