@@ -15,6 +15,7 @@ namespace MAFIA.Menus
             Console.WriteLine("------");
             Console.WriteLine("MENU");
             Console.WriteLine("------");
+            Console.WriteLine($"Dni działania gangu: {Game.Day}");
             Console.WriteLine($"Pozostało akcji do wykonania: {Game.GetRemainingActivitesCount()}");
             Console.WriteLine("------");
             if (Game.CanExecuteAction())
@@ -26,9 +27,9 @@ namespace MAFIA.Menus
                 Console.WriteLine("5.Korupcja (kontakty z Policją)");
             }
 
-            Console.WriteLine("7.Zakończ dzień");
+            Console.WriteLine("6.Zakończ dzień");
 
-            Console.WriteLine("8.Zakończ grę.");
+            Console.WriteLine("7.Zakończ grę.");
         }
 
         public List<int> DailLimitedActions = new List<int> { 1, 2, 3, 4, 5 };
@@ -53,6 +54,11 @@ namespace MAFIA.Menus
                     return new InfrastructureMenu(Game);
                 case 5:
                     return new PoliceMenu(Game);
+                case 6:
+                    return new DailySummaryMenu(Game);
+                case 7:
+                    Environment.Exit(-1);
+                    return this;
                 default:
                     Console.Clear();
                     Console.WriteLine("Nieprawidłowa akcja");

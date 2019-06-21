@@ -4,6 +4,7 @@ namespace MAFIA.Classes
 {
     public class Police
     {
+        public const int MaxWantedLevel = 5;
         public Police()
         {
             Policemen = new List<Policeman>()
@@ -11,7 +12,7 @@ namespace MAFIA.Classes
                 new Policeman("James Kowalsky", 200, 1),
                 new Policeman("Max Wood", 1000, 2),
                 new Policeman("Billy Joe", 3000, 3),
-                new Policeman("Dirty Harry", 5000, 4),
+                new Policeman("Dirty Harry", 5000, 10),
             };
             GangWantedLevel = 0;
         }

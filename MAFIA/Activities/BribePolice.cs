@@ -11,7 +11,7 @@ namespace MAFIA.Activities
         public Policeman Policeman { get; }
 
         public BribePolice(Policeman policeman)
-            : base($"{policeman.Name} - łapówka {policeman.Bribe}$ (Maks. poziom - {policeman.MaxWantedLevelCancellation}")
+            : base($"{policeman.Name} - łapówka {policeman.Bribe}$ (Maks. poziom - {policeman.MaxWantedLevelCancellation})")
         {
             Policeman = policeman;
         }

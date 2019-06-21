@@ -16,9 +16,12 @@ namespace MAFIA.Menus
             MenuItems = new Dictionary<int, Activity>
             {
                 { 1, new BuyInfrastructure(new Infrastructure("Stragan", 500, 100)) },
-                { 2, new BuyInfrastructure(new Infrastructure("Kiosk", 1000, 200)) },
-
-                { 3, new BackToMain("Powrót do menu głównego") },
+                { 2, new BuyInfrastructure(new Infrastructure("Kiosk", 2500, 500)) },
+                { 3, new BuyInfrastructure(new Infrastructure("Żabka", 10000, 1000)) },
+                { 4, new BuyInfrastructure(new Infrastructure("Biedronka", 100000, 3000)) },
+                { 5, new BuyInfrastructure(new Infrastructure("Kasyno", 500000, 5000)) },
+                { 6, new BuyInfrastructure(new Infrastructure("Hotel", 1000000, 10000)) },
+                { 7, new BackToMain("Powrót do menu głównego") },
             };
         }
 

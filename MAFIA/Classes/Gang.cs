@@ -7,13 +7,14 @@ namespace MAFIA.Classes
     {
         public Gang()
         {
-            Members = new List<GangMember>
+            _members = new List<GangMember>
             {
                 new GangMember("John Doe", 30, 10)
             };
-            Equipment = new List<Equipment>();
-            Properties = new List<Infrastructure>();
+            _equipment = new List<Equipment>();
+            _properties = new List<Infrastructure>();
             Money = 10;
+            NumberOfDistricts = 0;
         }
 
         public void AddMoney(int amount)
@@ -28,18 +29,33 @@ namespace MAFIA.Classes
 
         public void AddWeapon(Equipment weapon)
         {
-            Equipment.Add(weapon);
+            _equipment.Add(weapon);
         }
 
         public void AddProperty(Infrastructure property)
         {
-            Properties.Add(property);
+            _properties.Add(property);
+        }
+
+        public void RemoveProperty(Infrastructure property)
+        {
+            _properties.Remove(property);
         }
 
         public void AddMember(GangMember member)
         {
-            Members.Add(member);
+            _members.Add(member);
             AddMoney(member.Money);
+        }
+
+        public void RemoveMember(GangMember member)
+        {
+            _members.Remove(member);
+        }
+
+        public void RemoveAllMembers()
+        {
+            _members.Clear();
         }
 
         public int GetGangStrength()
@@ -47,9 +63,23 @@ namespace MAFIA.Classes
             return Members.Sum(member => member.Strength) + Equipment.Sum(eq => eq.Strength);
         }
 
-        public List<GangMember> Members { get; private set; }
-        public List<Equipment> Equipment { get; private set; }
-        public List<Infrastructure> Properties { get; private set; }
+        public void AddDistrict()
+        {
+            NumberOfDistricts += 1;
+        }
+
+        public int GetDailyIncome() => Properties.Sum(p => p.Income);
+
+        private readonly List<GangMember> _members; // Enkapsulacja listy cz³onków
+        public IReadOnlyList<GangMember> Members => _members;
+
+        private readonly List<Equipment> _equipment;
+        public IReadOnlyList<Equipment> Equipment => _equipment;
+
+        private readonly List<Infrastructure> _properties;
+        public IReadOnlyList<Infrastructure> Properties => _properties;
+
         public int Money { get; private set; }
+        public int NumberOfDistricts { get; private set; }
     }
 }

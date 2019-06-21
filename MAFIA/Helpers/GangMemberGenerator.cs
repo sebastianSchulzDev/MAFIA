@@ -14,8 +14,8 @@ namespace MAFIA.Helpers
 
         private static string GetRandomName()
         {
-            var firstNameIndex = RandomGenerator.GetForRange(0, FirstNames.Count - 1);
-            var lastNameIndex = RandomGenerator.GetForRange(0, LastNames.Count - 1);
+            var firstNameIndex = RandomGenerator.GetForRange(0, FirstNames.Count);
+            var lastNameIndex = RandomGenerator.GetForRange(0, LastNames.Count);
 
             return $"{FirstNames[firstNameIndex]} {LastNames[lastNameIndex]}";
         }
