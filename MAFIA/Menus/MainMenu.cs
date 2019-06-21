@@ -40,6 +40,8 @@ namespace MAFIA.Menus
                     return new GangMenu(Game);
                 case 3:
                     return new WeaponsMenu(Game);
+                case 4:
+                    return new InfrastructureMenu(Game);
                 case 5:
                     return new PoliceMenu(Game);
                 default:

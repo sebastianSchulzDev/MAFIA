@@ -18,6 +18,8 @@ namespace MAFIA.Menus
             Console.WriteLine($"Oszczędności: {Game.Gang.Money}$");
             Console.WriteLine($"Liczba członków gangu: {Game.Gang.Members.Count}");
             Console.WriteLine($"Ilość wyposażenia gangu: {Game.Gang.Equipment.Count}");
+            Console.WriteLine($"Ilość nieruchomości gangu: {Game.Gang.Properties.Count}");
+            Console.WriteLine($"Ilość dzielnic zajętych przez gang: {0}");
 
             Console.WriteLine($"Wciśnij 1 aby powrócić do menu");
         }

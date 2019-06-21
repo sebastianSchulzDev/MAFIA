@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using MAFIA.Activities;
 using MAFIA.Classes;
 
@@ -44,16 +43,19 @@ namespace MAFIA.Menus
                 {
                     if (Game.Police.GangWantedLevel == 0)
                     {
+                        Console.Clear();
                         Console.WriteLine("Gang nie posiada poziomu ścigania");
                         return this;
                     }
                     else if (Game.Police.GangWantedLevel > bribeActivity.Policeman.MaxWantedLevelCancellation)
                     {
+                        Console.Clear();
                         Console.WriteLine($"{bribeActivity.Policeman.Name} jest na zbyt niskim stanowisku aby obniżyć nasz poziom ścigania");
                         return this;
                     }
                     else if (Game.Gang.Money < bribeActivity.Policeman.Bribe)
                     {
+                        Console.Clear();
                         Console.WriteLine("Brak pieniędzy na łapówkę");
                         return this;
                     }

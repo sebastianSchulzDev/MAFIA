@@ -1,43 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using MAFIA.Activities;
 using MAFIA.Classes;
 
 namespace MAFIA.Menus
 {
-    public class WeaponsMenu : Menu
+    public class InfrastructureMenu : Menu
     {
-        public Dictionary<int, Activity> Weapons { get; private set; }
+        public Dictionary<int, Activity> MenuItems { get; private set; }
 
-        public WeaponsMenu(Game game) : base(game)
+        public InfrastructureMenu(Game game) : base(game)
         {
             Console.Clear();
-            Weapons = new Dictionary<int, Activity>
+            MenuItems = new Dictionary<int, Activity>
             {
-                { 1, new BuyWeapon(new Equipment("Nóż", 5, 10)) },
-                { 2, new BuyWeapon(new Equipment("Pistolet", 15, 30)) },
+                { 1, new BuyInfrastructure(new Infrastructure("Stragan", 500, 100)) },
+                { 2, new BuyInfrastructure(new Infrastructure("Kiosk", 1000, 200)) },
+
                 { 3, new BackToMain("Powrót do menu głównego") },
             };
         }
 
         public override void Display()
         {
-            Console.WriteLine("Bronie");
+            Console.WriteLine("Infrastruktura");
             Console.WriteLine("------");
-            foreach (var weapon in Weapons)
+            foreach (var menuItem in  MenuItems)
             {
-                Console.WriteLine($"{weapon.Key}. {weapon.Value.Name}");
+                Console.WriteLine($"{menuItem.Key}. {menuItem.Value.Name}");
             }
         }
 
         public override Menu DoAction(int action)
         {
-            if (Weapons.TryGetValue(action, out Activity selected))
+            if (MenuItems.TryGetValue(action, out Activity selected))
             {
-                if (selected is BuyWeapon butActivity && Game.Gang.Money < butActivity.Weapon.Cost) // (selected is BuyWeapon buyAction) - przyklad pattern matchingu
+                if (selected is BuyInfrastructure buyActivity && Game.Gang.Money < buyActivity.Property.Cost)
                 {
                     Console.Clear();
-                    Console.WriteLine("Brak środków do zakupu broni");
+                    Console.WriteLine("Brak środków do zakupu nieruchomości");
                     return this;
                 }
                 else

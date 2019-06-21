@@ -12,6 +12,7 @@ namespace MAFIA.Classes
                 new GangMember("John Doe", 30, 10)
             };
             Equipment = new List<Equipment>();
+            Properties = new List<Infrastructure>();
             Money = 10;
         }
 
@@ -30,6 +31,11 @@ namespace MAFIA.Classes
             Equipment.Add(weapon);
         }
 
+        public void AddProperty(Infrastructure property)
+        {
+            Properties.Add(property);
+        }
+
         public void AddMember(GangMember member)
         {
             Members.Add(member);
@@ -43,6 +49,7 @@ namespace MAFIA.Classes
 
         public List<GangMember> Members { get; private set; }
         public List<Equipment> Equipment { get; private set; }
+        public List<Infrastructure> Properties { get; private set; }
         public int Money { get; private set; }
     }
 }
