@@ -20,7 +20,7 @@ namespace MAFIA.Menus
             Console.WriteLine($"Ilość wyposażenia gangu: {Game.Gang.Equipment.Count}");
             Console.WriteLine($"Ilość nieruchomości gangu: {Game.Gang.Properties.Count}");
             Console.WriteLine($"Poziom ścigania przez policję: {Game.Police.GangWantedLevel}");
-            Console.WriteLine($"Ilość dzielnic zajętych przez gang: {Game.Gang.NumberOfDistricts}/{Game.DistrictsCount}");
+            Console.WriteLine($"Ilość dzielnic zajętych przez gang: {Game.Gang.GetNumberOfDistricts()}/{Game.DistrictsCount}");
 
             Console.WriteLine($"Wciśnij 1 aby powrócić do menu");
         }

@@ -14,7 +14,6 @@ namespace MAFIA.Classes
             _equipment = new List<Equipment>();
             _properties = new List<Infrastructure>();
             Money = 10;
-            NumberOfDistricts = 0;
         }
 
         public void AddMoney(int amount)
@@ -63,9 +62,13 @@ namespace MAFIA.Classes
             return Members.Sum(member => member.Strength) + Equipment.Sum(eq => eq.Strength);
         }
 
-        public void AddDistrict()
+        public int GetNumberOfDistricts()
         {
-            NumberOfDistricts += 1;
+            var districtsCount = GetGangStrength() / 100;
+            if (districtsCount > Game.DistrictsCount)
+                districtsCount = Game.DistrictsCount;
+
+            return districtsCount;
         }
 
         public int GetDailyIncome() => Properties.Sum(p => p.Income);
@@ -80,6 +83,5 @@ namespace MAFIA.Classes
         public IReadOnlyList<Infrastructure> Properties => _properties;
 
         public int Money { get; private set; }
-        public int NumberOfDistricts { get; private set; }
     }
 }

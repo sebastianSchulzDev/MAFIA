@@ -66,6 +66,8 @@ namespace MAFIA.Menus
                 else if (wantedLevelChange < 0)
                     Console.WriteLine($"Poziom ścigania przez policję zmalał o {-wantedLevelChange}.");
             }
+            Console.WriteLine($"Poziom poszukiwań gangu: {Game.Police.GangWantedLevel}");
+            Console.WriteLine($"Liczba dzielnic kontrolowanych przez gang: {Game.Gang.GetNumberOfDistricts()}/{Game.DistrictsCount}");
             Game.EndDay();
         }
 
@@ -86,7 +88,7 @@ namespace MAFIA.Menus
 
                 return true;
             }
-            else if (Game.Gang.NumberOfDistricts >= Game.DistrictsCount)
+            else if (Game.Gang.GetNumberOfDistricts() == Game.DistrictsCount)
             {
                 Console.WriteLine("Udało Ci się przejąć władzę nad całym miastem. Koniec gry!");
                 Console.WriteLine("Odblokowałeś trofeum: 'To miasto jest Twoje!'");
