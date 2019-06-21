@@ -7,23 +7,23 @@ using MAFIA.Interfaces;
 
 namespace MAFIA.Activities
 {
-    public class Auction : Activity, ILoggable, IRequiresStrength
+    public class Vat : Activity, ILoggable, IRequiresStrength
     {
-        public Auction(string name) : base(name)
+        public Vat(string name) : base(name)
         {
         }
 
-        public int RequiredStrength => 201;
+        public int RequiredStrength => 501;
 
         protected override ActivityLog ExecuteActivity(Game game)
         {
             Console.Clear();
             Console.WriteLine(Name);
             Console.WriteLine("Trwa wykonanie");
-            var income = RandomGenerator.GetForRange(1000, 5000);
+            var income = RandomGenerator.GetForRange(10000, 50000);
             game.Gang.AddMoney(income);
 
-            var increaseWantedLevelPosibility = RandomGenerator.GetForRange(100,300);
+            var increaseWantedLevelPosibility = RandomGenerator.GetForRange(400,600);
 
             if (game.Gang.GetGangStrength() < increaseWantedLevelPosibility)
             {

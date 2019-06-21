@@ -23,7 +23,7 @@ namespace MAFIA.Activities
             var income = RandomGenerator.GetForRange(600, 1000);
             game.Gang.AddMoney(income);
 
-            var increaseWantedLevelPosibility = RandomGenerator.GetForRange(300, 800);
+            var increaseWantedLevelPosibility = RandomGenerator.GetForRange(50, 200);
 
             if (game.Gang.GetGangStrength() < increaseWantedLevelPosibility)
             {
