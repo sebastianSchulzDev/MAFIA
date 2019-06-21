@@ -15,6 +15,9 @@ namespace MAFIA.Menus
             {
                 { 1, new Extortion("Haracz") },
                 { 2, new Heist("Napad") },
+                { 3, new Robbery("Rozbój") },
+                { 4, new Trade("Handel") },
+                {5, new Auction("Przetarg") },
                 { 7, new BackToMain("Powrót do menu głównego") },
             };
         }

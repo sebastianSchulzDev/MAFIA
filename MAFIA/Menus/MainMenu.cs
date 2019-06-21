@@ -27,7 +27,7 @@ namespace MAFIA.Menus
 
             Console.WriteLine("7.Zakończ dzień");
 
-            Console.WriteLine("99.Zakończ grę.");
+            Console.WriteLine("8.Zakończ grę.");
         }
 
         public override Menu DoAction(int action)
@@ -36,6 +36,7 @@ namespace MAFIA.Menus
             {
                 case 1:
                     return new JobsMenu(Game);
+                
                 default:
                     Console.WriteLine("Nieprawidłowa akcja");
                     return this;
