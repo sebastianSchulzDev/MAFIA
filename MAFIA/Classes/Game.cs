@@ -5,7 +5,7 @@ namespace MAFIA.Classes
 {
     public class Game
     {
-        private const int ActivityLimitPerDay = 5;
+        public const int ActivityLimitPerDay = 5;
         public Game()
         {
             Gang = new Gang();

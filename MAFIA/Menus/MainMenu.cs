@@ -1,5 +1,6 @@
 using MAFIA.Classes;
 using System;
+using System.Collections.Generic;
 
 namespace MAFIA.Menus
 {
@@ -30,8 +31,16 @@ namespace MAFIA.Menus
             Console.WriteLine("8.Zakończ grę.");
         }
 
+        public List<int> DailLimitedActions = new List<int> { 1, 2, 3, 4, 5 };
+
         public override Menu DoAction(int action)
         {
+            if(IsActionLimited(action))
+            {
+                Console.Clear();
+                Console.WriteLine("Wybrana akcja jest niedostępna. Osiągnięto dzienny limit akcji.");
+                return this;
+            }
             switch (action)
             {
                 case 1:
@@ -45,9 +54,15 @@ namespace MAFIA.Menus
                 case 5:
                     return new PoliceMenu(Game);
                 default:
+                    Console.Clear();
                     Console.WriteLine("Nieprawidłowa akcja");
                     return this;
             }
+        }
+
+        private bool IsActionLimited(int action)
+        {
+            return !Game.CanExecuteAction() && DailLimitedActions.Contains(action);
         }
     }
 }
