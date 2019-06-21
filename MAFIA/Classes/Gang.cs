@@ -32,7 +32,7 @@ namespace MAFIA.Classes
 
         public int GetGangStrength()
         {
-            return Members.Sum(member => member.Strength);
+            return Members.Sum(member => member.Strength) + Equipment.Sum(eq => eq.Strength);
         }
 
         public List<GangMember> Members { get; private set; }

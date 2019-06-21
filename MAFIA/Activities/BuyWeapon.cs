@@ -17,8 +17,10 @@ namespace MAFIA.Activities
 
         protected override ActivityLog ExecuteActivity(Game game)
         {
+            Console.Clear();
             Console.WriteLine($"Zakup broni: {Weapon.Name}");
             game.Gang.SpendMoney(Weapon.Cost);
+            Console.WriteLine($"Wydano {Weapon.Cost}$");
             game.Gang.AddWeapon(Weapon);
             return new ActivityLog(-Weapon.Cost);
         }
