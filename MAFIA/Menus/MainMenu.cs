@@ -36,6 +36,8 @@ namespace MAFIA.Menus
             {
                 case 1:
                     return new JobsMenu(Game);
+                case 2:
+                    return new GangMenu(Game);
                 case 3:
                     return new WeaponsMenu(Game);
                 default:
